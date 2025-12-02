@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { setContext, onMount } from 'svelte';
+  import { setContext } from 'svelte';
   import LineSeries from '../../components/LineSeries.svelte';
-  import type { LineData, LineSeriesPartialOptions } from 'lightweight-charts';
+  import type { IChartApi, LineData, LineSeriesPartialOptions } from 'lightweight-charts';
 
-  export let mockChart: any;
+  export let mockChart: IChartApi;
   export let data: LineData[] = [];
   export let options: LineSeriesPartialOptions = {};
 

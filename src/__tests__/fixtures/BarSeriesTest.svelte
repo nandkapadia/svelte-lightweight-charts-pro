@@ -1,9 +1,9 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import BarSeries from '../../components/BarSeries.svelte';
-  import type { BarData, BarSeriesPartialOptions } from 'lightweight-charts';
+  import type { IChartApi, BarData, BarSeriesPartialOptions } from 'lightweight-charts';
 
-  export let mockChart: any;
+  export let mockChart: IChartApi;
   export let data: BarData[] = [];
   export let options: BarSeriesPartialOptions = {};
 

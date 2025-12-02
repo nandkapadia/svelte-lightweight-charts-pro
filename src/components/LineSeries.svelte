@@ -1,17 +1,17 @@
 <script lang="ts">
   import { onMount, onDestroy, getContext } from 'svelte';
-  import type { ISeriesApi, LineData, LineSeriesPartialOptions } from 'lightweight-charts';
+  import type { ISeriesApi, IChartApi, LineData, LineSeriesPartialOptions } from 'lightweight-charts';
 
   export let data: LineData[] = [];
   export let options: LineSeriesPartialOptions = {};
 
-  const { getChart } = getContext<{ getChart: () => any }>('chart');
+  const { getChart } = getContext<{ getChart: () => IChartApi | null }>('chart');
   let series: ISeriesApi<'Line'> | null = null;
 
   onMount(() => {
     const chart = getChart();
     if (chart) {
-      series = chart.addLineSeries(options);
+      series = (chart as IChartApi & { addLineSeries: (options?: LineSeriesPartialOptions) => ISeriesApi<'Line'> }).addLineSeries(options);
       if (series && data && data.length > 0) {
         series.setData(data);
       }

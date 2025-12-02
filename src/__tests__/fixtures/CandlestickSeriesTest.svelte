@@ -1,9 +1,9 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import CandlestickSeries from '../../components/CandlestickSeries.svelte';
-  import type { CandlestickData, CandlestickSeriesPartialOptions } from 'lightweight-charts';
+  import type { IChartApi, CandlestickData, CandlestickSeriesPartialOptions } from 'lightweight-charts';
 
-  export let mockChart: any;
+  export let mockChart: IChartApi;
   export let data: CandlestickData[] = [];
   export let options: CandlestickSeriesPartialOptions = {};
 

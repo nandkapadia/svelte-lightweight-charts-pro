@@ -1,9 +1,9 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import BaselineSeries from '../../components/BaselineSeries.svelte';
-  import type { BaselineData, BaselineSeriesPartialOptions } from 'lightweight-charts';
+  import type { IChartApi, BaselineData, BaselineSeriesPartialOptions } from 'lightweight-charts';
 
-  export let mockChart: any;
+  export let mockChart: IChartApi;
   export let data: BaselineData[] = [];
   export let options: BaselineSeriesPartialOptions = {};
 

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { setContext } from 'svelte';
   import HistogramSeries from '../../components/HistogramSeries.svelte';
-  import type { HistogramData, HistogramSeriesPartialOptions } from 'lightweight-charts';
+  import type { IChartApi, HistogramData, HistogramSeriesPartialOptions } from 'lightweight-charts';
 
-  export let mockChart: any;
+  export let mockChart: IChartApi;
   export let data: HistogramData[] = [];
   export let options: HistogramSeriesPartialOptions = {};
 
